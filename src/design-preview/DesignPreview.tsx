@@ -4,9 +4,10 @@ import { LandingHero } from "./screens/LandingHero";
 import { LandingSections } from "./screens/LandingSections";
 import { DemoFlow } from "./screens/Demo";
 import { PlanesScreen } from "./screens/Planes";
+import { DeckScreen } from "./screens/Deck";
 
 type Variant = 'brutalist' | 'softhigh' | 'editorial';
-type Section = 'landing' | 'demo' | 'planes';
+type Section = 'landing' | 'demo' | 'planes' | 'deck';
 
 const VARIANTS: { id: Variant; tag: string; mood: string }[] = [
   { id: 'brutalist', tag: 'Swiss print × Tactical',  mood: 'Concreto + acero + naranja como hazard red. Grids visibles, ASCII framing, 90°.' },
@@ -18,6 +19,7 @@ const SECTIONS: { id: Section; label: string; sub: string }[] = [
   { id: 'landing', label: 'Landing pública',   sub: 'hero · cómo funciona · roles · casos · FAQ' },
   { id: 'demo',    label: 'Demo interactiva',  sub: 'sidebar · perfil switcher · tour · paywalls' },
   { id: 'planes',  label: 'BB vs BB +',        sub: 'comparativa de planes' },
+  { id: 'deck',    label: 'Deck comercial',    sub: '5 slides · ← → para navegar' },
 ];
 
 export default function DesignPreview() {
@@ -34,6 +36,7 @@ export default function DesignPreview() {
         </>)}
         {section === 'demo'   && <DemoFlow variant={variant} />}
         {section === 'planes' && <PlanesScreen variant={variant} />}
+        {section === 'deck'   && <DeckScreen variant={variant} />}
       </div>
     </div>
   );
